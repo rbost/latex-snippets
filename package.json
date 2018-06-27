@@ -1,0 +1,21 @@
+{
+    "name": "latex-snippets",
+    "displayName": "latex-snippets",
+    "description": "LaTeX snippets for VSCode",
+    "version": "0.0.1",
+    "publisher": "rbost",
+    "engines": {
+        "vscode": "^1.24.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "tex",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
