@@ -73,7 +73,7 @@
 	},
 	"begin": {
 		"prefix": "begin",
-		"body": "\\begin{${1:env}}\n\t${1/(enumerate|itemize|list)|(description)|.*/(?1:\\item )(?2:\\item)/}$0\n\\end{${1:env}}",
+		"body": "\\begin{$1}\n\t $0 \n\\end{${1}}",
 		"description": "\\begin{}…\\end{}",
 		"scope": "text.tex.latex"
 	},
@@ -97,7 +97,7 @@
 	},
 	"mat": {
 		"prefix": "mat",
-		"body": "\\begin{${1:p/b/v/V/B/small}matrix}\n\t$0\n\\end{${1:p/b/v/V/B/small}matrix}",
+		"body": "\\begin{${1|pmatrix,bmatrix,vmatrix,Vmatrix,Bmatrix,smallmatrix|}}\n\t$0\n\\end{${1}}",
 		"description": "Matrix",
 		"scope": "text.tex.latex"
 	},
@@ -115,13 +115,13 @@
 	},
 	"part": {
 		"prefix": "part",
-		"body": "\\part{${1:part name}} % (fold)\n\\label{prt:${2:${1/(\\w+)(\\W+$)?|\\W+/${1:?${1:/asciify/downcase}:_}/g}}}\n${0:$TM_SELECTED_TEXT}\n% part $2 (end)",
+		"body": "\\part{${1:part name}} % (fold)\n\\label{prt:${2}}\n${0:$TM_SELECTED_TEXT}\n% part $2 (end)",
 		"description": "Part",
 		"scope": "text.tex.latex"
 	},
 	"sec": {
 		"prefix": "sec",
-		"body": "\\section{${1:section name}} % (fold)\n\\label{sec:${2:${1/(\\w+)(\\W+$)?|\\W+/${1:?${1:/asciify/downcase}:_}/g}}}\n${0:$TM_SELECTED_TEXT}\n% section $2 (end)",
+		"body": "\\section{${1:section name}} % (fold)\n\\label{sec:${2}}\n${0:$TM_SELECTED_TEXT}\n% section $2 (end)",
 		"description": "Section",
 		"scope": "text.tex.latex"
 	},
@@ -139,19 +139,19 @@
 	},
 	"subp": {
 		"prefix": "subp",
-		"body": "\\subparagraph{${1:subparagraph name}} % (fold)\n\\label{subp:${2:${1/(\\w+)(\\W+$)?|\\W+/${1:?${1:/asciify/downcase}:_}/g}}}\n${0:$TM_SELECTED_TEXT}\n% subparagraph $2 (end)",
+		"body": "\\subparagraph{${1:subparagraph name}} % (fold)\n\\label{subp:${2}}\n${0:$TM_SELECTED_TEXT}\n% subparagraph $2 (end)",
 		"description": "Sub Paragraph",
 		"scope": "text.tex.latex"
 	},
 	"sub": {
 		"prefix": "sub",
-		"body": "\\subsection{${1:subsection name}} % (fold)\n\\label{sub:${2:${1/(\\w+)(\\W+$)?|\\W+/${1:?${1:/asciify/downcase}:_}/g}}}\n${0:$TM_SELECTED_TEXT}\n% subsection $2 (end)",
+		"body": "\\subsection{${1:subsection name}} % (fold)\n\\label{sub:${2}}\n${0:$TM_SELECTED_TEXT}\n% subsection $2 (end)",
 		"description": "Sub Section",
 		"scope": "text.tex.latex"
 	},
 	"subs": {
 		"prefix": "subs",
-		"body": "\\subsubsection{${1:subsubsection name}} % (fold)\n\\label{ssub:${2:${1/(\\w+)(\\W+$)?|\\W+/${1:?${1:/asciify/downcase}:_}/g}}}\n${0:$TM_SELECTED_TEXT}\n% subsubsection $2 (end)",
+		"body": "\\subsubsection{${1:subsubsection name}} % (fold)\n\\label{ssub:${2}}\n${0:$TM_SELECTED_TEXT}\n% subsubsection $2 (end)",
 		"description": "Sub Sub Section",
 		"scope": "text.tex.latex"
 	},
