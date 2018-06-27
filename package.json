@@ -13,7 +13,7 @@
     "contributes": {
         "snippets": [
             {
-                "language": "tex",
+                "language": "latex",
                 "path": "./snippets/snippets.json"
             }
         ]
