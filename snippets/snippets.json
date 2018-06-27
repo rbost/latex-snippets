@@ -1,13 +1,19 @@
 {
 	"ali": {
 		"prefix": "ali",
-		"body": "\\begin{align`echo $TM_SCOPE|grep math|\nsed -e 's/.*math.*/ed/'`}\n\t$0\n\\end{align`echo $TM_SCOPE|grep math|\nsed -e 's/.*math.*/ed/'`}",
-		"description": "Align(ed)",
+		"body": "\\begin{align}\n\t$0\n\\end{align}",
+		"description": "Align",
+		"scope": "text.tex.latex"
+	},
+	"alim": {
+		"prefix": "ali",
+		"body": "\\begin{aligned}\n\t$0\n\\end{aligned}",
+		"description": "Aligned (math)",
 		"scope": "text.tex.latex"
 	},
 	"cas": {
 		"prefix": "cas",
-		"body": "\\begin{cases}\n\t${1:equation}, &\\text{ if }${2:case}\\\\\\\\\n\t$0\n\\end{cases}",
+		"body": "\\begin{cases}\n\t${1:equation}, &\\text{ if }${2:case} \\\\\\\\\n\t$0\n\\end{cases}",
 		"description": "Cases",
 		"scope": "text.tex.latex"
 	},
@@ -19,13 +25,13 @@
 	},
 	"desc": {
 		"prefix": "desc",
-		"body": "\\\\begin{description}\n\t\\item[$1] $0\n\\\\end{description}",
+		"body": "\\begin{description}\n\t\\item[$1] $0\n\\end{description}",
 		"description": "Description",
 		"scope": "text.tex.latex"
 	},
 	"enum": {
 		"prefix": "enum",
-		"body": "\\\\begin{enumerate}\n\t\\item $0\n\\\\end{enumerate}",
+		"body": "\\begin{enumerate}\n\t\\item $0\n\\end{enumerate}",
 		"description": "Enumerate",
 		"scope": "text.tex.latex"
 	},
@@ -55,25 +61,31 @@
 	},
 	"gat": {
 		"prefix": "gat",
-		"body": "\\begin{gather`echo $TM_SCOPE|grep math|\nsed -e 's/.*math.*/ed/'`}\n\t$0\n\\end{gather`echo $TM_SCOPE|grep math|\nsed -e 's/.*math.*/ed/'`}",
-		"description": "Gather(ed)",
+		"body": "\\begin{gather}\n\t$0\n\\end{gather}",
+		"description": "Gather",
+		"scope": "text.tex.latex"
+	},
+	"gatm": {
+		"prefix": "gat",
+		"body": "\\begin{gathered}\n\t$0\n\\end{gathered}",
+		"description": "Gathered (math",
 		"scope": "text.tex.latex"
 	},
 	"begin": {
 		"prefix": "begin",
-		"body": "\\\\begin{${1:env}}\n\t${1/(enumerate|itemize|list)|(description)|.*/(?1:\\item )(?2:\\item)/}$0\n\\\\end{${1:env}}",
+		"body": "\\begin{${1:env}}\n\t${1/(enumerate|itemize|list)|(description)|.*/(?1:\\item )(?2:\\item)/}$0\n\\end{${1:env}}",
 		"description": "\\begin{}…\\end{}",
 		"scope": "text.tex.latex"
 	},
 	"itd": {
 		"prefix": "itd",
-		"body": "\\\\item[${1:description}] ${0:item}",
+		"body": "\\item[${1:description}] ${0:item}",
 		"description": "\\item[description]",
 		"scope": "text.tex.latex meta.function.environment.list"
 	},
 	"item": {
 		"prefix": "item",
-		"body": "\\\\begin{itemize}\n\t\\item $0\n\\\\end{itemize}",
+		"body": "\\begin{itemize}\n\t\\item $0\n\\end{itemize}",
 		"description": "Itemize",
 		"scope": "text.tex.latex"
 	},
@@ -151,7 +163,7 @@
 	},
 	"tab": {
 		"prefix": "tab",
-		"body": "\\\\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}\n$0${2/((?<=[clr])([ |]*(c|l|r)))|./(?1: & )/g}\n\\\\end{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}",
+		"body": "\\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}\n$0${2/((?<=[clr])([ |]*(c|l|r)))|./(?1: & )/g}\n\\end{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}",
 		"description": "Tabular",
 		"scope": "text.tex.latex"
 	},
